@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white p-4 flex flex-col justify-center items-center h-screen">
+    <h1 class="text-2xl mb-4">Formulario para estudiantes de programación</h1>
+    <form id="studentForm">
+        <label for="nombre" class="mb-4">¿Cuál es tu nombre?</label>
+        <input type="text" name="nombre" id="nombre" class="mb-1">
+        <br>
+        <label for="edad">¿Cuántos años tienes?</label>
+        <input type="number" name="edad" id="edad" class="mb-1">
+        <br>
+        <label for="lenguaje">¿Qué lenguaje de programación estás estudiando?</label>
+        <input type="text" name="lenguaje" id="lenguaje"class="mb-1">
+        <br>
+        <label for="gustaLenguaje">¿Te gusta estudiar este lenguaje?</label>
+        <select id="gustaLenguaje" name="gustaLenguaje" class="mb-1">
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script src="/Day2/day2.js"></script>
+</body>
+</html>
