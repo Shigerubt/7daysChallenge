@@ -49,5 +49,3 @@ document.getElementById('numberForm').addEventListener('submit', function(event)
     console.log(message);
     alert(message);
 });
-
-
