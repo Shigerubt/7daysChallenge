@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Input</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white p-4">
+    <h1 class="text-2xl mb-4">Number Input</h1>
+    <form id="numberForm" class="p-4 w-1/4"></form>
+        <label for="numberInputA" class="block mb-2">Enter number A:</label>
+        <input type="text" id="numberInputA" name="numberInputA" class="border p-2 mb-4 w-full text-black">
+        
+        <label for="typeSelectA" class="block mb-2">Select type for A:</label>
+        <select id="typeSelectA" name="typeSelectA" class="border p-2 mb-4 w-full text-black">
+            <option value="string">String</option>
+            <option value="int">INT</option>
+        </select>
+        
+        <label for="numberInputB" class="block mb-2">Enter number B:</label>
+        <input type="text" id="numberInputB" name="numberInputB" class="border p-2 mb-4 w-full text-black">
+        
+        <label for="typeSelectB" class="block mb-2">Select type for B:</label>
+        <select id="typeSelectB" name="typeSelectB" class="border p-2 mb-4 w-full text-black">
+            <option value="string">String</option>
+            <option value="int">INT</option>
+        </select>
+        
+        <button type="submit" class="bg-blue-500 text-white p-2 rounded">Submit</button>
+    </form>
+
+    <script src="dayOne.js"></script>
+</body>
+</html>
