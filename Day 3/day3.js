@@ -1,36 +1,88 @@
-// Pregunta inicial: Front-End o Back-End
-let area = prompt("¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End? (Responde con 'Front-End' o 'Back-End')");
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Decisiones de Aprendizaje</title>
+</head>
+<body>
+    <h1>Juego de Decisiones de Aprendizaje</h1>
+    <div id="content">
+        <label for="area">¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End?</label>
+        <select id="area">
+            <option value="">Selecciona una opción</option>
+            <option value="Front-End">Front-End</option>
+            <option value="Back-End">Back-End</option>
+        </select>
+        <button onclick="nextQuestion()">Siguiente</button>
+    </div>
 
-if (area === "Front-End") {
-    // Pregunta específica para Front-End
-    let frontEndChoice = prompt("¿Quieres aprender React o aprender Vue? (Responde con 'React' o 'Vue')");
-    alert(`Has elegido aprender ${frontEndChoice} en el área de Front-End.`);
-} else if (area === "Back-End") {
-    // Pregunta específica para Back-End
-    let backEndChoice = prompt("¿Quieres aprender C# o aprender Java? (Responde con 'C#' o 'Java')");
-    alert(`Has elegido aprender ${backEndChoice} en el área de Back-End.`);
-} else {
-    alert("Opción no válida. Por favor, recarga la página y elige una opción válida.");
-}
+    <script>
+        function nextQuestion() {
+            const area = document.getElementById('area').value;
+            const content = document.getElementById('content');
 
-// Pregunta sobre especialización o Fullstack
-let specialization = prompt("¿Quieres seguir especializándote en el área elegida o desarrollarte para convertirte en Fullstack? (Responde con 'especializarme' o 'Fullstack')");
+            if (area === "Front-End") {
+                content.innerHTML = `
+                    <label for="frontEndChoice">¿Quieres aprender React o aprender Vue?</label>
+                    <select id="frontEndChoice">
+                        <option value="">Selecciona una opción</option>
+                        <option value="React">React</option>
+                        <option value="Vue">Vue</option>
+                    </select>
+                    <button onclick="specializationQuestion()">Siguiente</button>
+                `;
+            } else if (area === "Back-End") {
+                content.innerHTML = `
+                    <label for="backEndChoice">¿Quieres aprender C# o aprender Java?</label>
+                    <select id="backEndChoice">
+                        <option value="">Selecciona una opción</option>
+                        <option value="C#">C#</option>
+                        <option value="Java">Java</option>
+                    </select>
+                    <button onclick="specializationQuestion()">Siguiente</button>
+                `;
+            } else {
+                alert("Opción no válida. Por favor, elige una opción válida.");
+            }
+        }
 
-if (specialization === "especializarme") {
-    alert("Has elegido seguir especializándote en el área elegida.");
-} else if (specialization === "Fullstack") {
-    alert("Has elegido desarrollarte para convertirte en Fullstack.");
-} else {
-    alert("Opción no válida. Por favor, recarga la página y elige una opción válida.");
-}
+        function specializationQuestion() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <label for="specialization">¿Quieres seguir especializándote en el área elegida o desarrollarte para convertirte en Fullstack?</label>
+                <select id="specialization">
+                    <option value="">Selecciona una opción</option>
+                    <option value="especializarme">especializarme</option>
+                    <option value="Fullstack">Fullstack</option>
+                </select>
+                <button onclick="moreTechnologiesQuestion()">Siguiente</button>
+            `;
+        }
 
-// Pregunta sobre tecnologías adicionales
-let moreTechnologies = true;
+        function moreTechnologiesQuestion() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <label for="technology">¿En qué tecnologías te gustaría especializarte o conocer?</label>
+                <input type="text" id="technology">
+                <button onclick="addTechnology()">Añadir</button>
+                <div id="technologiesList"></div>
+                <button onclick="finish()">Finalizar</button>
+            `;
+        }
 
-while (moreTechnologies) {
-    let technology = prompt("¿En qué tecnologías te gustaría especializarte o conocer?");
-    alert(`¡Genial! Es interesante aprender sobre ${technology}.`);
-    moreTechnologies = prompt("¿Hay alguna otra tecnología que te gustaría aprender? (Responde con 'ok' para continuar o cualquier otra cosa para finalizar)") === "ok";
-}
+        function addTechnology() {
+            const technology = document.getElementById('technology').value;
+            const technologiesList = document.getElementById('technologiesList');
+            const newTechnology = document.createElement('p');
+            newTechnology.textContent = `¡Genial! Es interesante aprender sobre ${technology}.`;
+            technologiesList.appendChild(newTechnology);
+            document.getElementById('technology').value = '';
+        }
 
-alert("¡Gracias por participar en el juego de decisiones de aprendizaje en programación!");
+        function finish() {
+            alert("¡Gracias por participar en el juego de decisiones de aprendizaje en programación!");
+        }
+    </script>
+</body>
+</html>

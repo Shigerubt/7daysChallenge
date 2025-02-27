@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Juego de Decisiones de Aprendizaje</title>
 </head>
 <body>
+    <h1>Juego de Decisiones de Aprendizaje</h1>
+    <div id="content">
+        <label for="area">¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End?</label>
+        <select id="area">
+            <option value="">Selecciona una opción</option>
+            <option value="Front-End">Front-End</option>
+            <option value="Back-End">Back-End</option>
+        </select>
+        <button onclick="nextQuestion()">Siguiente</button>
+    </div>
     <script src="day3.js"></script>
 </body>
 </html>
