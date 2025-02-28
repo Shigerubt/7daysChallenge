@@ -20,30 +20,51 @@
     <script>
         function nextQuestion() {
             const area = document.getElementById('area').value;
-            const content = document.getElementById('content');
+            const contentDiv = document.getElementById('content');
 
             if (area === "Front-End") {
-                content.innerHTML = `
-                    <label for="frontEndChoice">¿Quieres aprender React o aprender Vue?</label>
-                    <select id="frontEndChoice">
+                contentDiv.innerHTML = `
+                    <label for="frontend">¿Qué tecnología te gustaría aprender?</label>
+                    <select id="frontend">
                         <option value="">Selecciona una opción</option>
                         <option value="React">React</option>
                         <option value="Vue">Vue</option>
+                        <option value="Angular">Angular</option>
                     </select>
-                    <button onclick="specializationQuestion()">Siguiente</button>
+                    <button onclick="showResult()">Siguiente</button>
                 `;
             } else if (area === "Back-End") {
-                content.innerHTML = `
-                    <label for="backEndChoice">¿Quieres aprender C# o aprender Java?</label>
-                    <select id="backEndChoice">
+                contentDiv.innerHTML = `
+                    <label for="backend">¿Qué tecnología te gustaría aprender?</label>
+                    <select id="backend">
                         <option value="">Selecciona una opción</option>
-                        <option value="C#">C#</option>
+                        <option value="Node.js">Node.js</option>
+                        <option value="Python">Python</option>
                         <option value="Java">Java</option>
                     </select>
-                    <button onclick="specializationQuestion()">Siguiente</button>
+                    <button onclick="showResult()">Siguiente</button>
                 `;
             } else {
-                alert("Opción no válida. Por favor, elige una opción válida.");
+                alert("Por favor, selecciona un área.");
+            }
+        }
+
+        function showResult() {
+            const area = document.getElementById('area').value;
+            let technology;
+
+            if (area === "Front-End") {
+                technology = document.getElementById('frontend').value;
+            } else if (area === "Back-End") {
+                technology = document.getElementById('backend').value;
+            }
+
+            if (technology) {
+                document.getElementById('content').innerHTML = `
+                    <h2>Has elegido ${area} con ${technology}</h2>
+                `;
+            } else {
+                alert("Por favor, selecciona una tecnología.");
             }
         }
 
