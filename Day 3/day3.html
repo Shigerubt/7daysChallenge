@@ -9,13 +9,9 @@
 <body class="bg-black text-white p-4 flex flex-col justify-center items-center h-screen">
     <h1>Juego de Decisiones de Aprendizaje</h1>
     <div id="content">
-        <label for="area">¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End?</label>
-        <select id="area" class="text-black">
-            <option value="">Selecciona una opción</option>
-            <option value="Front-End">Front-End</option>
-            <option value="Back-End">Back-End</option>
-        </select>
-        <button onclick="nextQuestion()">Siguiente</button>
+        <label for="name">¿Cómo te gustaría que te llamen?</label>
+        <input type="text" id="name" class="text-black">
+        <button onclick="askArea()">Siguiente</button>
     </div>
     <script src="/Day 3/day3.js"></script>
 </body>

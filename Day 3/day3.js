@@ -17,14 +17,7 @@ function askArea() {
         <button onclick="nextQuestion()">Siguiente</button>
     `;
 }
-    `;
-}
 
-function nextQuestion() {
-    console.log("nextQuestion function called");
-
-    selectedArea = document.getElementById('area').value;
-    const contentDiv = document.getElementById('content');
 function nextQuestion() {
     console.log("nextQuestion function called");
 
