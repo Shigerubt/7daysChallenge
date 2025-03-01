@@ -9,7 +9,7 @@ function askArea() {
     const contentDiv = document.getElementById('content');
     contentDiv.innerHTML = `
         <label for="area">Hola ${userName}, ¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End?</label>
-        <select id="area">
+        <select id="area" class="text-black">
             <option value="">Selecciona una opción</option>
             <option value="Front-End">Front-End</option>
             <option value="Back-End">Back-End</option>
@@ -27,7 +27,7 @@ function nextQuestion() {
     if (selectedArea === "Front-End") {
         contentDiv.innerHTML = `
             <label for="frontend">¿Qué framework de Front-End te gustaría aprender, ${userName}?</label>
-            <select id="frontend">
+            <select id="frontend" class="text-black">
                 <option value="">Selecciona una opción</option>
                 <option value="React">React</option>
                 <option value="Vue">Vue</option>
@@ -38,7 +38,7 @@ function nextQuestion() {
     } else if (selectedArea === "Back-End") {
         contentDiv.innerHTML = `
             <label for="backend">¿Qué framework de Back-End te gustaría aprender, ${userName}?</label>
-            <select id="backend">
+            <select id="backend" class="text-black">
                 <option value="">Selecciona una opción</option>
                 <option value="Node.js">Node.js</option>
                 <option value="Python">Python</option>
@@ -63,7 +63,7 @@ function specializationQuestion() {
     const content = document.getElementById('content');
     content.innerHTML = `
         <label for="specialization">¿Quieres seguir especializándote en el área elegida o desarrollarte para convertirte en Fullstack, ${userName}?</label>
-        <select id="specialization">
+        <select id="specialization" class="text-black">
             <option value="">Selecciona una opción</option>
             <option value="especializarme">especializarme</option>
             <option value="Fullstack">Fullstack</option>
@@ -80,7 +80,7 @@ function moreTechnologiesQuestion() {
     const content = document.getElementById('content');
     content.innerHTML = `
         <label for="technology">¿En qué tecnologías te gustaría especializarte o conocer, ${userName}?</label>
-        <input type="text" id="technology">
+        <input type="text" id="technology" class="text-black">
         <button onclick="addTechnology()">Añadir</button>
         <div id="technologiesList"></div>
         <button onclick="finish()">Finalizar</button>
