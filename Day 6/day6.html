@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-black p-4 flex flex-col justify-center items-center h-screen">
+    <h1 class="text-2xl mb-4">Lista de Compras</h1>
+    <form id="shoppingForm" class="mb-4">
+        <div class="mb-2">
+            <label for="productName" class="block">Nombre del Producto:</label>
+            <input type="text" id="productName" class="border p-1">
+        </div>
+        <div class="mb-2">
+            <label for="category" class="block">Categoría:</label>
+            <select id="category" class="border p-1">
+                <option value="">Selecciona una categoría</option>
+                <option value="Frutas">Alimentos</option>
+                <option value="Verduras">Frutas y verduras</option>
+                <option value="Lácteos">Bebidas</option>
+                <option value="Carnes">Domésticos</option>
+                <option value="Bebidas">Otros</option>
+            </select>
+        </div>
+        <div class="mb-2">
+            <label for="quantity" class="block">Cantidad:</label>
+            <input type="number" id="quantity" class="border p-1">
+        </div>
+        <button type="button" onclick="addItem()" class="bg-blue-500 text-white p-2">Añadir</button>
+    </form>
+    <div id="shoppingList" class="w-full max-w-md mb-4"></div>
+    <button type="button" onclick="deleteSelectedItems()" class="bg-red-500 text-white p-2">Eliminar Seleccionados</button>
+    <script src="day6.js"></script>
+</body>
+</html>
