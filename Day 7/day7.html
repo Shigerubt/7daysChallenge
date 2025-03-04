@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Calculator</title>
+</head>
+<body class="bg-black text-white p-4 flex flex-col justify-center items-center h-screen">
+    <h1 class="text-2xl mb-4">Calculator</h1>
+    <form id="calculatorForm" class="mb-4">
+        <div class="mb-2">
+            <label for="firstNumber" class="block">First Number:</label>
+            <input type="number" id="firstNumber" class="border p-1 text-black">
+        </div>
+        <div class="mb-2">
+            <label for="secondNumber" class="block">Second Number:</label>
+            <input type="number" id="secondNumber" class="border p-1 text-black">
+        </div>
+        <button type="button" onclick="add()" class="bg-blue-500 text-white p-2">Add</button>
+        <button type="button" onclick="subtract()" class="bg-blue-500 text-white p-2">Subtract</button>
+        <button type="button" onclick="multiply()" class="bg-blue-500 text-white p-2">Multiply</button>
+        <button type="button" onclick="divide()" class="bg-blue-500 text-white p-2">Divide</button>
+        <button type="button" onclick="addMemory()" class="bg-green-500 text-white p-2">Add Memory</button>
+        <button type="button" onclick="clearMemory()" class="bg-red-500 text-white p-2">Clear Memory</button>
+        <button type="button" onclick="showMemory()" class="bg-purple-500 text-white p-2">Show Memory</button>
+        <button type="button" onclick="clearFields()" class="bg-yellow-500 text-black p-2">Clear</button>
+    </form>
+    <div id="result" class="w-full max-w-md mb-4"></div>
+    <script src="/Day 7/day7.js"></script>
+</body>
+</html>
